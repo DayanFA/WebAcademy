@@ -1,0 +1,7 @@
+<tr>
+    <th *ngFor="let coluna of colunas"
+        (click)="ordenar(coluna.campo)"
+        [ngClass]="classeAtivo(coluna.campo)">
+            {{ coluna.descricao }}
+    </th>
+</tr>

@@ -1,0 +1,359 @@
+body, app-root {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+app-root {   
+    display: flex;
+    flex-direction: column;
+}
+
+html, body, app-root {
+    height: 100%;
+}
+
+/* Header e Footer */
+
+div#logo {
+    margin: auto 0;
+    span {
+        font-weight: bold;
+        font-size: 2em;
+    }
+    * {
+        vertical-align: middle;
+        margin-left: 0.5em;
+    }
+}
+
+header {
+    /* Propriedade definida no arquivo do tema */
+    /* background-image: linear-gradient(#003366, #006699); */
+    display: flex;
+    justify-content: space-between;
+    /* Responsivo */
+    flex-wrap: wrap;
+}
+
+/* Propriedade definida no arquivo do tema */
+/* footer {
+    background-color: #003366;
+} */
+
+header, footer {
+    color: white;
+    padding: 0.5em;
+}
+
+%shared-span {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+footer {
+    a {
+        color: inherit;
+    }    
+    span {
+        @extend %shared-span;
+    }
+}
+
+div#usuarioInfo {
+    text-align: right;
+    a.botao {
+        border: 1px solid white;
+    }
+    span {
+        @extend %shared-span;
+    }    
+}
+
+@media screen and (max-width: 450px) {
+    div#usuarioInfo {
+        text-align: left;
+        margin-top: 1em;
+    }
+}
+
+
+/* Main */
+
+main {
+    background-image: linear-gradient(#cccccc, white);
+    padding: 1em;
+    flex-basis: 100%;
+    position: relative;
+}
+
+/* Links e botões */
+
+$cor-botao: #2c832d;
+$cor-botao-excluir: #c42626;
+$cor-botao-confirmacao: #7c7401;
+$cor-botao-chegada: #01378a;
+
+@mixin botao($cor) {
+    background-color: $cor;
+    &:hover {
+        background-color: darken($cor, 10%);
+    }
+}
+
+a.botao,
+input[type="button"],
+input[type="submit"] {
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    margin-left: 0.25em;
+    @include botao($cor-botao);
+}
+
+a.botao {
+    text-decoration: none;
+    padding: 0 0.4em;
+    line-height: 2em;
+    display: inline-block;
+    &.inativo {
+        display: none;
+    }
+    &.oculto {
+        visibility: hidden;
+    }
+    &.confirmacao,
+    &.chegada,
+    &.iniciar,
+    &.finalizar {
+        width: 5.5em;
+    }
+    &.confirmacao {
+        @include botao($cor-botao-confirmacao);
+    }
+    &.chegada {
+        @include botao($cor-botao-chegada);
+    }
+}
+
+input[type="button"],
+input[type="submit"] {
+    height: 2em;
+}
+
+input, select, a.botao {
+    font-size: 1em;
+}
+
+a.botao.excluir,
+input[value="Cancelar"] {
+    @include botao($cor-botao-excluir);
+}
+
+/* Formulários */
+
+form {
+    width: fit-content;
+    margin: auto auto 1em auto;
+    text-align: right;
+    label::after {
+        content: ":";
+    }
+    div.grid {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 0.5em;
+        margin-bottom: 0.5em;
+        align-items: center;
+        input, select {
+            width: 18em;
+        }
+        input {
+            &[type="checkbox"] {
+                margin-left: 0;
+                width: 1.25em;
+            }
+            &[type="date"] {
+                font-family: inherit;
+            }
+        }
+    }
+}
+
+input, select {
+    height: 2em;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    box-sizing: border-box;
+    &:invalid {
+        border-color: red;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    form div.grid {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        text-align: left;
+        width: 90%;
+    }
+
+    form div.grid input,
+    form div.grid select {
+        width: 100%;
+    }
+
+}
+
+/* Tabela */
+
+table {
+    width: 100%;
+    border-spacing: 0.2em;
+    /* Responsivo */
+    display: block;
+    overflow-x: auto;
+    td, th {
+        padding: 0.5em;
+    }
+    th {
+        /* Propriedade definida no arquivo do tema */
+        /* background-color: #003366; */
+        color: white;
+        cursor: pointer;
+        position: relative;
+        padding: .5em 1.25em;
+        &.ativo-asc::after,
+        &.ativo-desc::after {
+            position: absolute;
+            right: .5em;
+        }
+        &.ativo-asc::after {
+            content: '↑';
+        }
+        &.ativo-desc::after {
+            content: '↓';
+        }
+    }
+    tbody {
+        tr {
+            &:nth-child(odd) {
+                background-color: #c6d4e2;
+            }
+            &:nth-child(even) {
+                background-color: #e7ecf1;
+            }
+            &:hover {
+                background-color: #cccccc;
+            }
+            td {
+                &:last-child,
+                &.fit {
+                    text-align: center;
+                    width: 1%;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+    tfoot td {
+        /* Propriedade definida no arquivo do tema */
+        /* border-top: 1px solid #003366; */
+        text-align: center;
+    }
+}
+
+@media print {
+
+    header, nav, footer, form, div#comandos {
+        display: none;
+    }
+    table {
+        th {
+            color: black;
+        }
+        th, td {
+            border: 1px solid black;
+        }
+        thead th:last-child,
+        tbody td:last-child {
+            display: none;
+        }
+    }
+
+}
+
+/* Nav */
+
+nav {
+    background-color: #383838;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            &, a {
+                display: inline-block; 
+            }
+            a {
+                color: white;
+                text-decoration: none;
+                padding: 1em;
+                &:hover {
+                    background-color: #cccccc;
+                    color: #383838;
+                }
+            }
+            &#dropdown {
+                &:hover div#dropdown_menu,
+                &:focus-within div#dropdown_menu,
+                a:focus + div#dropdown_menu {
+                    display: block;
+                }
+            }
+        }
+    }
+    div#dropdown_menu {
+        display: none;
+        position: absolute;
+        background-color: #383838;
+        border: 1px solid white;
+        box-shadow: 0px 2px 4px black;
+        z-index: 999;
+        a {
+            display: block;
+        }
+    }
+
+}
+
+@media screen and (max-width: 740px) {
+
+    nav ul li {
+        display: block;
+        width: 100%;
+        a {
+            width: 100%;
+        }
+    }
+
+}
+
+/* Barra de comandos */
+
+div#comandos {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 0.1em;
+    /* Propriedade definida no arquivo do tema */
+    /* border-bottom: 1px solid #003366; */
+}
+
+app-atendimento-list a#add {
+    visibility: hidden;
+}

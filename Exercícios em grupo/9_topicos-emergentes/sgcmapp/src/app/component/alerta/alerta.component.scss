@@ -1,0 +1,31 @@
+$tipos-alerta: (
+    sucesso: #97c6a8,
+    erro: #f1b0b9
+);
+
+@mixin tipo-alerta($cor) {
+    background-color: $cor;
+    color: darken($cor, 50%);
+    border-color: darken($cor, 50%);
+}
+
+div.alerta {
+    border: 1px solid;
+    padding: 1em;
+    max-width: 400px;
+    margin: 1em auto;
+    word-wrap: break-word;
+    span#fechar {
+        float: right;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+    &.inativo {
+        display: none;
+    }
+    @each $tipo, $cor in $tipos-alerta {
+        &.#{ $tipo } {
+            @include tipo-alerta($cor);
+        }
+    }
+}

@@ -1,0 +1,28 @@
+[ {
+  "baseItem" : {
+    "id" : "_h1RzoJVdEe6JZ67NQgYx5w",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_xU71AJVcEe6JZ67NQgYx5w",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
+    "id" : "_xU71AJVcEe6JZ67NQgYx5w - convenio",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_xU71AJVcEe6JZ67NQgYx5w - especialidade",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_xU71AJVcEe6JZ67NQgYx5w - profissional",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_xU71AJVcEe6JZ67NQgYx5w - unidade",
+    "version" : "Latest",
+    "type" : "schema"
+  } ]
+} ]

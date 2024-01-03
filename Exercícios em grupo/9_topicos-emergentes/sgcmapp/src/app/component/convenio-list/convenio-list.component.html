@@ -1,0 +1,37 @@
+<app-barra-comandos (eventoBusca)="get($event)"></app-barra-comandos>
+<table>
+    <thead app-thead-ordenacao
+        [colunas]="colunas"
+        (eventoOrdenacao)="ordenar($event)"></thead>
+    <tbody>
+        <tr *ngFor="let item of registros">
+            <td class="fit">{{ item.id }}</td>
+            <td>{{ item.nome }}</td>
+            <td>{{ item.razaoSocial }}</td>
+            <td>{{ item.cnpj }}</td>
+            <td>{{ item.representante }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.telefone }}</td>
+            <td>{{ item.ativo ? "Sim" : "Não" }}</td>
+            <td class="fit">
+                <a class="botao"
+                   routerLink="./form"
+                   [queryParams]="{id: item.id}">Editar</a>
+                <a class="botao excluir"
+                    (click)="delete(item.id)">Excluir</a>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="9">Total de registros: {{ registros.length }}</td>
+        </tr>
+    </tfoot>
+</table>
+<app-paginacao
+    [totalItens]="paginaResposta.totalElements"
+    [totalPaginas]="paginaResposta.totalPages"
+    [paginaAtual]="paginaResposta.number"
+    [tamanhoPagina]="paginaResposta.size"
+    (paginaSelecionada)="mudarPagina($event)"
+    (tamanhoPaginaSelecionado)="mudarTamanhoPagina($event)"></app-paginacao>

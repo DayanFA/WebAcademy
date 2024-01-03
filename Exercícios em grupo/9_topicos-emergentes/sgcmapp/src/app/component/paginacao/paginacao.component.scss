@@ -1,0 +1,48 @@
+nav, nav *, nav:hover {
+    all: revert;
+}
+
+:host {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 740px) {
+    :host {
+        flex-wrap: wrap;
+        justify-content: center;
+    }    
+}
+
+select {
+    height: 1.5em;
+    margin-bottom: .5em;
+}
+
+nav {
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    li a, li {
+        display: inline-block;
+    }
+
+    li a {
+        color: inherit;
+        text-decoration: none;
+        padding: .25em .5em;
+        margin: 0 .1em;
+        &:hover, &.ativo {
+            background-color: #383838;
+            color: white;
+            border-radius: .5em;
+        }
+    }
+    
+}

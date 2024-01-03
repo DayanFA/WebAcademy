@@ -1,0 +1,38 @@
+<app-barra-comandos (eventoBusca)="get($event)"></app-barra-comandos>
+<table>
+    <thead app-thead-ordenacao
+        [colunas]="colunas"
+        (eventoOrdenacao)="ordenar($event)"></thead>
+    <tbody>
+        <tr *ngFor="let item of registros">
+            <td class="fit">{{ item.data | date:'dd/MM/yyyy' }}</td>
+            <td class="fit">{{ item.hora | slice:0:5 }}</td>
+            <td>{{ item.paciente.nome }}</td>
+            <td>{{ item.profissional.nome }}</td>
+            <td>{{ item.profissional.unidade.nome }}</td>
+            <td>{{ item.convenio?.nome }}</td>
+            <td>
+                <a class="botao iniciar"
+                   href=""
+                   (click)="updateStatus(item.id);$event.preventDefault();"
+                   [ngClass]="{ 'inativo': item.status == 'ATENDIMENTO' }">Iniciar</a>
+                <a class="botao finalizar excluir"
+                   href=""
+                   (click)="updateStatus(item.id);$event.preventDefault();"
+                   [ngClass]="{ 'inativo': item.status == 'CHEGADA' }">Finalizar</a>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="7">Total de registros: {{ registros.length }}</td>
+        </tr>
+    </tfoot>
+</table>
+<app-paginacao
+    [totalItens]="paginaResposta.totalElements"
+    [totalPaginas]="paginaResposta.totalPages"
+    [paginaAtual]="paginaResposta.number"
+    [tamanhoPagina]="paginaResposta.size"
+    (paginaSelecionada)="mudarPagina($event)"
+    (tamanhoPaginaSelecionado)="mudarTamanhoPagina($event)"></app-paginacao>
