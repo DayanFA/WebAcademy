@@ -1,0 +1,54 @@
+<a class="skip-link" [routerLink]="[currentUrl]" [fragment]="'main'">
+    Ir para o conteúdo principal
+</a>
+<header>
+  <div id="logo">
+      <img src="assets/imagens/logo_branco.png" alt="Logo SGCM">
+      <span id="titulo">{{ title }}</span>
+  </div>
+  <div id="usuarioInfo">
+      <span>Usuário: Administrador (admin)</span>
+      <span>Papel: ADMIN</span>
+      <app-select-tema></app-select-tema>
+      <!--<select id="tema">
+          <option value="">Escolha um tema</option>
+          <option value="azul">Azul</option>
+          <option value="vermelho">Vermelho</option>
+          <option value="amarelo">Amarelo</option>
+      </select>-->
+      <a href="javascript:void(0)"
+         class="botao">Logout</a>
+  </div>
+</header>
+<nav>
+  <ul>
+    <li><a routerLink="/agenda" (click)="onLinkClick('/agenda')" [class.active]="activeLink === '/agenda'">Agenda</a></li>
+    <li><a routerLink="/atendimento" (click)="onLinkClick('/atendimento')" [class.active]="activeLink === '/atendimento'">Atendimento</a></li>
+    <li><a routerLink="/pacientes" (click)="onLinkClick('/pacientes')" [class.active]="activeLink === '/pacientes'">Pacientes</a></li>
+    <li><a routerLink="/profissionais" (click)="onLinkClick('/profissionais')" [class.active]="activeLink === '/profissionais'">Profissionais</a></li>
+    <li><a routerLink="/convenios" (click)="onLinkClick('/convenios')" [class.active]="activeLink === '/convenios'">Convênios</a></li>
+      <li id="dropdown" [class.active-config]="activeLink.startsWith('/config')">
+          <a href="javascript:void(0)">
+              Configurações
+              <span>&#9660;</span>
+          </a>
+          <div id="dropdown_menu">
+            <a routerLink="/config/unidades" (click)="onLinkClick('/config/unidades')"
+                [class.active]="activeLink === '/config/unidades'">Unidades</a>
+            <a routerLink="/config/especialidades" (click)="onLinkClick('/config/especialidades')"
+                [class.active]="activeLink === '/config/especialidades'">Especialidades</a>
+            <a routerLink="/config/usuarios" (click)="onLinkClick('/config/usuarios')"
+                [class.active]="activeLink === '/config/usuarios'">Usuários</a>  
+          </div>
+      </li>
+  </ul>
+</nav>
+<main id="main">
+    <app-loader></app-loader>
+    <app-alerta></app-alerta>
+    <router-outlet></router-outlet>
+</main>
+<footer>
+  <span>SGCM - Sistema de Gerenciamento de Clínica Médica</span>
+  <span>Suporte técnico: (68) 5555-5555 | <a href="mailto:suporte.sgcm@ufac.br">suporte.sgcm&#64;ufac.br</a></span>
+</footer>

@@ -1,0 +1,8 @@
+a.skip-link {
+    background-color: white;
+    transform: translateY(-100%);
+    position: absolute;
+    &:focus {
+        transform: translateY(0%);
+    }
+}

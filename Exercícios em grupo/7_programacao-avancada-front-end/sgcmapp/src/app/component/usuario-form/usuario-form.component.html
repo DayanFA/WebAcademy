@@ -1,0 +1,30 @@
+<form (ngSubmit)="save()" #form="ngForm">
+
+    <div class="grid">
+
+        <input type="hidden" name="id" [(ngModel)]="registro.id">
+
+        <label for="nomeCompleto">Nome</label>
+        <input type="text" [(ngModel)]="registro.nomeCompleto" name="nomeCompleto" required>
+    
+        <label for="nomeUsuario">Usuário</label>
+        <input type="text" [(ngModel)]="registro.nomeUsuario" name="nomeUsuario" required>
+    
+        <label for="senha">Senha</label>
+        <input type="password" [(ngModel)]="registro.senha" name="senha">
+    
+        <label for="ativo">Ativo</label>
+        <input type="checkbox" [(ngModel)]="registro.ativo" name="ativo">
+    
+        <label for="papel">Papel</label>
+        <select [(ngModel)]="registro.papel" name="papel" required>
+            <option value="ROLE_ATENDENTE">ATENDENTE</option>
+            <option value="ROLE_ADMIN">ADMIN</option>
+        </select>
+
+    </div>
+
+    <input type="button" value="Cancelar" routerLink="../">
+    <input type="submit" value="Salvar" [disabled]="form.invalid">
+    
+</form>

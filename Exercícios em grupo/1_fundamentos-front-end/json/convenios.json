@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "ativo": true,
+      "cnpj": "46.560.030/0001-53",
+      "email": "contato@unimedriobranco.com.br",
+      "nome": "Unimed",
+      "razao_social": "Unimed Rio Branco Cooperativa de Trabalho Médico Ltda.",
+      "representante": "Thayline Figueredo Vaz",
+      "telefone": "(68) 3668-1546"
+    },
+    {
+      "id": 2,
+      "ativo": true,
+      "cnpj": "29.309.127/0001-79",
+      "email": "contato@amil.com.br",
+      "nome": "Amil",
+      "razao_social": "AMIL ASSISTENCIA MEDICA INTERNACIONAL S.A.",
+      "representante": "Davi Faria da Conceição",
+      "telefone": "(11) 3279-3035"
+    },
+    {
+      "id": 3,
+      "ativo": true,
+      "cnpj": "92.693.118/0001-60",
+      "email": "contato@bradescosaude.com.br",
+      "nome": "Bradesco",
+      "razao_social": "BRADESCO SAUDE S.A.",
+      "representante": "Leandra Paes dos Anjos",
+      "telefone": "(21) 2503-0787"
+    }
+  ]

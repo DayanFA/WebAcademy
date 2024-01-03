@@ -1,0 +1,29 @@
+<select [(ngModel)]="tamanhoPagina" (change)="onSizeChange()">
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+    <option value="25">25</option>
+    <option value="30">30</option>
+    <option value="35">35</option>
+    <option value="41">41</option>
+</select>
+<nav>
+    <ul>
+        <li>
+            <a href="javascript:void(0)"
+               (click)="mudarPagina(0)">Primeira</a>
+        </li>
+        <li *ngIf="paginaAtual > 2">...</li>
+        <li *ngFor="let pagina of listarPaginas()">
+            <a href="javascript:void(0)"
+               (click)="mudarPagina(pagina)"
+               [ngClass]="{'ativo': paginaAtual == pagina}">{{pagina + 1}}</a>
+        </li>
+        <li *ngIf="paginaAtual < totalPaginas - 3">...</li>
+        <li>
+            <a href="javascript:void(0)"
+               (click)="mudarPagina(totalPaginas - 1)">Última</a>
+        </li>
+    </ul>
+</nav>

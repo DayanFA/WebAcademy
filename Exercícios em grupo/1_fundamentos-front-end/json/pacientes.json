@@ -1,0 +1,67 @@
+[
+    {
+      "id": 1,
+      "cep": "69903-134",
+      "cidade": "Rio Branco",
+      "data_nascimento": "1945-09-28",
+      "email": "giulia.bencatel@gmail.com",
+      "endereco": "Rua Cedro, 100 - Parque dos Sabiás",
+      "estado": "AC",
+      "grupo_sanguineo": "AB_POSITIVO",
+      "nome": "Giulia Farias Bencatel",
+      "sexo": "F",
+      "telefone": "(68) 98105-2583"
+    },
+    {
+      "id": 2,
+      "cep": "69901-884",
+      "cidade": "Rio Branco",
+      "data_nascimento": "1941-04-22",
+      "email": "wallace.soriano@yahoo.com",
+      "endereco": "Travessa Mossoró, 90 - Vitória",
+      "estado": "AC",
+      "grupo_sanguineo": "B_POSITIVO",
+      "nome": "Wallace Macedo Inácio Soriano",
+      "sexo": "M",
+      "telefone": "(68) 97431-7722"
+    },
+    {
+      "id": 3,
+      "cep": "69909-060",
+      "cidade": "Rio Branco",
+      "data_nascimento": "1997-06-05",
+      "email": "helen.vilar@gmail.com",
+      "endereco": "Rua Adelaide, 50 - Rosa Linda",
+      "estado": "AC",
+      "grupo_sanguineo": "AB_NEGATIVO",
+      "nome": "Helen Dutra Vilar",
+      "sexo": "F",
+      "telefone": "(68) 99752-4954"
+    },
+    {
+      "id": 4,
+      "cep": "69911-262",
+      "cidade": "Rio Branco",
+      "data_nascimento": "2009-03-10",
+      "email": "mario.branco@uol.com.br",
+      "endereco": "Rua Luiz Galvez, 200 - Conjunto Castelo Branco",
+      "estado": "AC",
+      "grupo_sanguineo": "O_POSITIVO",
+      "nome": "Jean Schuenck Amorin",
+      "sexo": "M",
+      "telefone": "(68) 97120-8079"
+    },
+    {
+      "id": 5,
+      "cep": "69980-970",
+      "cidade": "Cruzeiro do Sul",
+      "data_nascimento": "1974-11-14",
+      "email": "lucilene.lucas@gmail.com",
+      "endereco": "Rua Rego Barros, 427 - Centro",
+      "estado": "AC",
+      "grupo_sanguineo": "A_POSITIVO",
+      "nome": "Lucilene Santos Lucas",
+      "sexo": "F",
+      "telefone": "(68) 99384-3354"
+    }
+  ]

@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "ativo": true,
+      "nome_completo": "Administrador",
+      "nome_usuario": "daniel",
+      "papel": "ADMIN",
+      "senha": "$2a$10$HJGFDh87hsuYRhfgh8dsjkS"
+    },
+    {
+      "id": 2,
+      "ativo": true,
+      "nome_completo": "Daniel",
+      "nome_usuario": "admin",
+      "papel": "ADMIN",
+      "senha": "$2a$10$sgd6YHGf87FJHh87NjjgdT"
+    },
+    {
+      "id": 3,
+      "ativo": true,
+      "nome_completo": "Paulo",
+      "nome_usuario": "paulo",
+      "papel": "ATENDENTE",
+      "senha": "$2a$10$JHKJHgy78HFJKHhjsgf9KJ"
+    },
+    {
+      "id": 4,
+      "ativo": true,
+      "nome_completo": "Daricélio",
+      "nome_usuario": "daricelio",
+      "papel": "ATENDENTE",
+      "senha": "$2a$10$2HDFgh9JHfg7hJHGd7g8dK"
+    },
+    {
+      "id": 5,
+      "ativo": true,
+      "nome_completo": "Laura",
+      "nome_usuario": "laura",
+      "papel": "ATENDENTE",
+      "senha": "$2a$10$KLSJL8g7JHgd7HSKdh7sdL"
+    }
+  ]

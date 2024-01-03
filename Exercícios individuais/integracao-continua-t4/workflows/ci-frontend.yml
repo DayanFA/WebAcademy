@@ -1,0 +1,49 @@
+name: CI Back-end
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'sgcmapi/**'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'sgcmapi/**'
+  workflow_call:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          node-version: '18'
+      - name: Cliente Angular
+        run: npm install -g @angular/cli@16
+      - name: Instalar de dependências
+        working-directory: sgcmapp/
+        run: npm install
+      - name: Build
+        working-directory: sgcmapp/
+        run: ng build
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          node-version: '18'
+      - name: Cliente Angular
+        run: npm install -g @angular/cli@16
+      - name: Instalar de dependências
+        working-directory: sgcmapp/
+        run: npm install
+      - name: Test
+        working-directory: sgcmapp/
+        run: ng test --no-watch --no-progress --browsers=ChromeHeadlessCI

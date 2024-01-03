@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SgcmapiApplication<br.ufac-sgcmapi>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.ufac.sgcmapi.SgcmapiApplication",
+            "projectName": "br.ufac-sgcmapi",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

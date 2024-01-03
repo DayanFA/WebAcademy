@@ -1,0 +1,32 @@
+<app-barra-comandos (eventoBusca)="get($event)"></app-barra-comandos>
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Usuário</th>
+            <th>Ativo</th>
+            <th>Papel</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of registros">
+            <td>{{ item.nomeCompleto }}</td>
+            <td>{{ item.nomeUsuario }}</td>
+            <td>{{ item.ativo }}</td>
+            <td>{{ item.papel }}</td>
+            <td>
+                <a class="botao"
+                       routerLink="./form"
+                       [queryParams]="{id: item.id}">Editar</a>
+                    <a class="botao excluir"
+                       (click)="delete(item.id)">Excluir</a>
+            </td>
+          </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">Total de registros: {{ registros.length }}</td>
+        </tr>
+    </tfoot>
+</table>

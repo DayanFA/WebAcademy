@@ -1,0 +1,55 @@
+<form (submit)="save(form)" #form="ngForm">
+
+    <div class="grid">
+
+        <label for="profissional">Profissional</label>
+        <select name="profissional" id="profissional" required
+                [(ngModel)]="registro.profissional"
+                [compareWith]="compareById"
+                (ngModelChange)="SelectGetHorarios()">
+            <option value="">Selecione</option>
+            <option *ngFor="let item of profissionais"
+                    [ngValue]="item">{{item.nome}}</option>
+        </select>
+
+        <label for="data">Data</label>
+        <input type="date" name="data" id="data" required
+               [(ngModel)]="registro.data"
+               (ngModelChange)="SelectGetHorarios()">
+
+        <label for="hora">Hora</label>
+        <select name="hora" id="hora" required
+                [(ngModel)]="registro.hora">
+            <option value="">Selecione</option>
+            <option *ngFor="let horario of horariosDisponiveis"
+                    [ngValue]="horario"
+                    [disabled]="horariosOcupados.includes(horario)"
+                    [style.opacity]="horariosOcupados.includes(horario)? 0.5 :1">
+                    {{horario | slice:0:5}}
+            </option>
+        </select>
+
+        <label for="convenio">Convênio</label>
+        <select name="convenio" id="convenio"
+                [(ngModel)]="registro.convenio"
+                [compareWith]="compareById">
+            <option value="">Selecione</option>
+            <option *ngFor="let item of convenios"
+                    [ngValue]="item">{{item.nome}}</option>
+        </select>
+
+        <label for="paciente">Paciente</label>
+        <select name="paciente" id="paciente" required
+                [(ngModel)]="registro.paciente"
+                [compareWith]="compareById">
+            <option value="">Selecione</option>
+            <option *ngFor="let item of pacientes"
+                    [ngValue]="item">{{item.nome}}</option>
+        </select>
+
+    </div>
+
+    <input type="button" value="Cancelar" routerLink="../">
+    <input type="submit" value="Salvar" [disabled]="form.invalid">
+
+</form>

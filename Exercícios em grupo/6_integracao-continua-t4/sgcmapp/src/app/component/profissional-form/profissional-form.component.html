@@ -1,0 +1,34 @@
+<form (ngSubmit)="save()" #form="ngForm">
+    
+    <div class="grid">
+
+        <input type="hidden" name="id" [(ngModel)]="registro.id">
+
+        <label for="nome">Nome</label>
+        <input type="text" [(ngModel)]="registro.nome" name="nome" required>
+
+        <label for="registroConselho">Registro</label>
+        <input type="text" [(ngModel)]="registro.registroConselho" name="registroConselho" required>
+
+        <label for="especialidade">Especialidade</label>
+        <select [(ngModel)]="registro.especialidade" [compareWith]="compareById" name="especialidade" required>
+            <option *ngFor="let e of especialidades" [ngValue]="e">{{e.nome}}</option>
+        </select>
+
+        <label for="unidade">Unidade</label>
+        <select [(ngModel)]="registro.unidade" [compareWith]="compareById" name="unidade" required>
+            <option *ngFor="let u of unidades" [ngValue]="u">{{u.nome}}</option>
+        </select>
+
+        <label for="telefone">Telefone</label>
+        <input type="text" [(ngModel)]="registro.telefone" name="telefone" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" [(ngModel)]="registro.email" name="email" required>
+        
+    </div>
+
+    <input type="button" value="Cancelar" routerLink="../">
+    <input type="submit" value="Salvar" [disabled]="form.invalid">
+    
+</form>

@@ -1,0 +1,13 @@
+1. [GRUPO] Elaborar 10 questões de negócio relacionadas ao SGCM para serem respondidas com técnicas de análise de dados,
+considerando as informações armazenadas na base de dados do sistema:
+
+  1- Comparar porcetagem de pacientes idosos, adultos, crianças;
+  2- Profissional mais procurado;
+  3- Período de mais procura;
+  4- Convênio mais utilizado;
+  5- Média de atendimentos por dia;
+  6- Especialidade mais procurada;
+  7- Demanda de atendimentos por região;
+  8- Grupo sanguíneo predominante;
+  9- Unidades com mais profissionais;
+  10- Número de atendimentos por unidade;

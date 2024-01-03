@@ -1,0 +1,36 @@
+$cor-erro: #c84b4b;
+$cor-sucesso: #365837;
+$cor-fundo-erro: #f1b0b9;
+$cor-fundo-sucesso: #97c6a8;
+
+@mixin alerta-cores-escuras($cor-fundo, $cor-texto, $cor-borda) {
+    background-color: darken($cor-fundo, 10%);
+    color: darken($cor-texto, 10%);
+    border-color: darken($cor-borda, 10%);
+}
+
+div.alerta {
+    border: 1px solid;
+    padding: 1em;
+    max-width: 400px;
+    margin: 1em auto;
+    word-wrap: break-word;
+
+    & span#fechar {
+        float: right;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+
+    &.erro {
+        @include alerta-cores-escuras($cor-fundo-erro, $cor-erro, $cor-erro);
+    }
+
+    &.sucesso {
+        @include alerta-cores-escuras($cor-fundo-sucesso, $cor-sucesso, $cor-sucesso);
+    }
+
+    &.inativo {
+        display: none;
+    }
+}
